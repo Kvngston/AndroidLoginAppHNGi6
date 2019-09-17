@@ -2,7 +2,10 @@ package com.tk.loginapp
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         try {
             var userDetails = sharedPreferences.getStringSet("${emailOrUsername.text}", setOf())
+            var editor:SharedPreferences.Editor = sharedPreferences.edit()
 
             if (userDetails != null) {
                 if (!userDetails.contains(emailOrUsername.text.toString())) {
@@ -46,6 +50,8 @@ class MainActivity : AppCompatActivity() {
 
                 if (userDetails.contains(password.text.toString())) {
                     Toast.makeText(this, "Login Successful!!", Toast.LENGTH_SHORT).show()
+                    editor.putStringSet("display", userDetails)
+                    editor.commit()
                     startActivity(dashBoardIntent)
                 } else {
                     Toast.makeText(this, "Invalid Details", Toast.LENGTH_SHORT).show()

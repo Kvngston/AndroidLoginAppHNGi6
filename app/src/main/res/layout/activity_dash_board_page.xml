@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".DashBoardPage">
 
+    <TextView
+        android:id="@+id/usernameDispay"
+        android:layout_width="332dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailDisplay" />
+
+    <TextView
+        android:id="@+id/emailDisplay"
+        android:layout_width="332dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
