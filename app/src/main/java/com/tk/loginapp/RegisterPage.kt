@@ -33,13 +33,15 @@ class RegisterPage : AppCompatActivity() {
         var intent = Intent(this,MainActivity::class.java)
         var sharedPreferences = getSharedPreferences("Models", Context.MODE_PRIVATE)
         var editor:SharedPreferences.Editor = sharedPreferences.edit()
-        var user = sharedPreferences.getStringSet("${username.text}", setOf())
+        var user = sharedPreferences.getStringSet("${username.text}", setOf<String>())
 
 
 
         //for the Email
         if (!email.text.toString().matches(emailRegex)) {
             emailX.visibility = View.VISIBLE
+            email.setText("")
+            email.hint = "Invalid Email"
         }else
             emailX.visibility = View.INVISIBLE
 
@@ -47,7 +49,7 @@ class RegisterPage : AppCompatActivity() {
 
         //For the Username
 
-        if (user.isNullOrEmpty())
+        if (user?.isEmpty() as Boolean)
             usernameX.visibility = View.INVISIBLE
         else {
             println(user.toString())
@@ -58,9 +60,10 @@ class RegisterPage : AppCompatActivity() {
 
 
         //for the Password
-        if (password.text.toString().length < 8)
+        if (password.text.toString().length < 8) {
             passwordX.visibility = View.VISIBLE
-        else
+            Toast.makeText(this, "Password should be more than 8 characters", Toast.LENGTH_SHORT).show()
+        }else
             passwordX.visibility = View.INVISIBLE
 
         if (password.text.toString() == confPassTxt.text.toString())
@@ -74,7 +77,7 @@ class RegisterPage : AppCompatActivity() {
 
         if(emailX.visibility != View.VISIBLE && usernameX.visibility != View.VISIBLE && passwordX.visibility != View.VISIBLE && confPassX.visibility != View.VISIBLE){
 
-            var userDetails = mutableSetOf("${email.text}","${username.text}","${password.text}")
+            var userDetails = hashSetOf("${email.text}","${username.text}","${password.text} password")
             editor.putStringSet("${username.text}",userDetails)
             editor.putStringSet("${email.text}", userDetails)
             editor.commit()

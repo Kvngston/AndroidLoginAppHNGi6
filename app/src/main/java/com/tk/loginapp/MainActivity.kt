@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     fun login(){
         var sharedPreferences = getSharedPreferences("Models", Context.MODE_PRIVATE)
         var dashBoardIntent = Intent(this,DashBoardPage::class.java)
-        var loggedInUser:Set<String>
+        var loggedInUser:HashSet<String>
 
         try {
             var userDetails = sharedPreferences.getStringSet("${emailOrUsername.text}", setOf())
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     password.setText("")
                 }
 
-                if (userDetails.contains(password.text.toString())) {
+                if (userDetails.contains(password.text.toString() + " password")) {
                     Toast.makeText(this, "Login Successful!!", Toast.LENGTH_SHORT).show()
                     editor.putStringSet("display", userDetails)
                     editor.commit()

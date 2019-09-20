@@ -8,81 +8,101 @@
     tools:context=".RegisterPage">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lock" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/background3" />
 
     <TextView
         android:id="@+id/Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="72dp"
         android:text="Sign Up"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:layout_height="80dp"
         android:layout_marginTop="72dp"
+        android:alpha="1"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/Register" />
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
+        android:alpha="1"
         android:ems="10"
         android:hint="Username"
         android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
+        android:alpha="1"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
         android:id="@+id/confPassTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_width="314dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="14dp"
+        android:alpha="1"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/registerBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="146dp"
+        android:layout_height="75dp"
         android:layout_marginTop="43dp"
+        android:background="@drawable/rounded_button"
         android:text="Register"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,52 +110,46 @@
 
     <ImageView
         android:id="@+id/emailX"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="47dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="48dp"
         android:visibility="invisible"
-        android:layout_marginEnd="58dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/xsymbol" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/caution" />
 
     <ImageView
         android:id="@+id/usernameX"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
+        android:layout_width="47dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="48dp"
         android:visibility="invisible"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="58dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/emailX"
-        app:srcCompat="@drawable/xsymbol" />
+        app:srcCompat="@drawable/caution" />
 
     <ImageView
         android:id="@+id/passwordX"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="58dp"
+        android:layout_width="47dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="48dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/usernameX"
-        app:srcCompat="@drawable/xsymbol" />
+        app:srcCompat="@drawable/caution" />
 
     <ImageView
         android:id="@+id/confPassX"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="58dp"
+        android:layout_width="47dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="48dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/usernameX"
-        app:srcCompat="@drawable/xsymbol" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordX"
+        app:srcCompat="@drawable/caution" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
